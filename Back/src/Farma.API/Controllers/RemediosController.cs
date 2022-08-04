@@ -11,11 +11,11 @@ namespace Farma.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class RemedioController : ControllerBase
+    public class RemediosController : ControllerBase
     {        
 
     private readonly DataContext context;
-    public RemedioController(DataContext context)
+    public RemediosController(DataContext context)
     {
         this.context = context;
     }

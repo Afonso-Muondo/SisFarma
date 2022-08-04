@@ -13,7 +13,7 @@ namespace Farma.API.Data.Migrations
                     RemedioId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Preço = table.Column<double>(type: "REAL", nullable: false),
+                    Preco = table.Column<double>(type: "REAL", nullable: false),
                     Volume = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

@@ -26,7 +26,7 @@ namespace Farma.API.Data.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Preço")
+                    b.Property<double>("Preco")
                         .HasColumnType("REAL");
 
                     b.Property<string>("Volume")
