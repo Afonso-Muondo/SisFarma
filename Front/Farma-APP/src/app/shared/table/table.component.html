@@ -1,0 +1,42 @@
+<table class="table rounded shadow-sm">
+  <thead class="thead" style="color: white">
+    <tr>
+      <th>Cod. Produto</th>
+      <!-- <th>Imagem</th> -->
+      <th>Nome do Produto</th>
+      <th>Volume</th>
+      <th>Preço</th>
+      <th>Qnt. Estoque</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="remedios && remedios.length" style="cursor: pointer">
+    <tr *ngFor="let remedio of remediosFiltrados" (click)="detalheRemedio(remedio.id)">
+      <td>{{remedio.id}}</td>
+      <!-- <td>{{remedio.image}}</td> -->
+      <td>{{remedio.nome}}</td>
+      <td>{{remedio.volume}}</td>
+      <td>R$ {{remedio.preco}}</td>
+      <td>{{remedio.qtdEstoque}}</td>
+      <td>
+        <button type="button" class="btn btn-primary mr-2" (click)="detalheRemedio(remedio.id)">
+          <i class="fa fa-edit"></i>
+        </button>
+        <button type="button" class="btn btn-danger" (click)="openModal($event, template, remedio.id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar o produto {{this.remedioId}}?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\bin\Debug\net5.0\Farma.Domain.deps.json
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\bin\Debug\net5.0\Farma.Domain.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\bin\Debug\net5.0\ref\Farma.Domain.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\bin\Debug\net5.0\Farma.Domain.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.csproj.AssemblyReference.cache
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.AssemblyInfoInputs.cache
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.AssemblyInfo.cs
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.csproj.CoreCompileInputs.cache
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\ref\Farma.Domain.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Domain\obj\Debug\net5.0\Farma.Domain.pdb

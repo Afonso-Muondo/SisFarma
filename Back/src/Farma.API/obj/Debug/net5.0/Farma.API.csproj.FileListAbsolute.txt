@@ -55,3 +55,11 @@ C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\runtimes\win-arm
 C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\Farma.Application.dll
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\Farma.Domain.dll
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\Farma.Infra.dll
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\Farma.Application.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\Farma.Domain.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\Farma.Infra.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\AutoMapper.dll
+C:\afonso\projects\SisFarma\back\src\Farma.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

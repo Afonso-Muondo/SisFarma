@@ -1,6 +1,77 @@
-<h1>Lista de Remédios</h1>
-<div *ngFor="let remedio of remedios">
-  <p><b>Nome:</b> {{remedio.nome}}</p>
-  <p><b>Preço:</b> R$ {{remedio.preco}}</p>
+  <table class="conteudo">
+    <td class="remedio">
+      <app-titulo [titulo]="'Produto'" [iconsClass]="'fa fa-basket-shopping'"></app-titulo>
+    </td>
+    <td class="button">
+      <a href="home"><button class="home btn btn-primary mr-2" style="background-color:#360be1">
+        <i class="fa fa-home"></i>
+        Home
+      </button></a>
+      <a href="cadastro">
+        <button class="cad btn btn-warning" style="color: white">
+          <i class="fa-solid fa-list"></i>
+          Cadastro
+        </button>
+      </a>
+    </td>
+  </table>
   <hr>
-</div>
+
+    <div class="form-inline">
+      <div class="form-group mb-2">
+        <div class="place">
+          <i class="fas fa-search"></i>
+          <input type="form" class="form-control mr-2" placeholder="Pesquise por nome ou volume do produto." [(ngModel)]="filtroLista">
+          <a class="search-btn" href="#"></a>
+        </div>
+        <a href="produtos">
+        <button class="limp btn btn-outline-primary" routerLink="/produtos">
+          Limpar
+        </button>
+      </a>
+      </div>
+    </div>
+
+    <table class="table rounded shadow-sm">
+      <thead class="thead" style="color: white">
+        <tr>
+          <th>Cod. Produto</th>
+          <!-- <th>Imagem</th> -->
+          <th>Nome do Produto</th>
+          <th>Volume</th>
+          <th>Preço</th>
+          <th>Qnt. Estoque</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="remedios && remedios.length" style="cursor: pointer">
+        <tr *ngFor="let remedio of remediosFiltrados" (click)="detalheRemedio(remedio.id)">
+          <td>{{remedio.id}}</td>
+          <!-- <td>{{remedio.image}}</td> -->
+          <td>{{remedio.nome}}</td>
+          <td>{{remedio.volume}}</td>
+          <td>R$ {{remedio.preco}}</td>
+          <td>{{remedio.qtdEstoque}}</td>
+          <td>
+            <button type="button" class="btn btn-primary mr-2" (click)="detalheRemedio(remedio.id)">
+              <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="btn btn-danger" (click)="openModal($event, template, remedio.id)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <ng-template #template>
+      <div class="modal-body text-center">
+        <p>Tem certeza que quer deletar o produto {{this.remedioId}}?</p>
+        <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+        <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+      </div>
+    </ng-template>
+  <!-- {{remedios | json}} -->
+
+  <router-outlet></router-outlet>

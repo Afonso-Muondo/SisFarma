@@ -2,52 +2,129 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Farma.API.Data;
-using Farma.API.models;
+using Farma.Application.Contratos;
+using Farma.Application.Dtos;
+using Farma.Domain.models;
+using Farma.Infra.Contextos;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Farma.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     public class RemediosController : ControllerBase
-    {        
-
-    private readonly DataContext context;
-    public RemediosController(DataContext context)
     {
-        this.context = context;
+        private readonly IFarmaService farmaService;
+
+        public RemediosController(IFarmaService farmaService)
+    {
+            this.farmaService = farmaService;
     }
 
     [HttpGet]
-    public IEnumerable<Remedio> Get()
+    public async Task<IActionResult> Get()
     {
-        return this.context.Remedios;
+        try
+        {
+            var remedios = await this.farmaService.GetAllRemediosAsync();
+            if (remedios == null) return NoContent();            
+
+            return Ok(remedios);
+        }
+        catch (Exception ex)
+        {            
+            return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                $"Erro ao tentar recuperar Produtos. Erro: {ex.Message}");
+        }
     }
 
     [HttpGet("{id}")]
-    public Remedio Get(int id)
+    public async Task<IActionResult> GetById(int id)
     {
-        return this.context.Remedios.FirstOrDefault(remedio => remedio.RemedioId == id);
+        try
+        {
+            var remedio = await this.farmaService.GetRemedioByIdAsync(id);
+            if (remedio == null) return NoContent();
+
+            return Ok(remedio);
+        }
+        catch (Exception ex)
+        {            
+            return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                $"Erro ao tentar recuperar Produtos. Erro: {ex.Message}");
+        }
+    }
+
+    [HttpGet("{nome}/nome")]
+    public async Task<IActionResult> GetByNome(string nome)
+    {
+        try
+        {
+            var remedio = await this.farmaService.GetAllRemediosByNomeAsync(nome);
+            if (remedio == null) return NoContent();
+
+            return Ok(remedio);
+        }
+        catch (Exception ex)
+        {            
+            return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                $"Erro ao tentar recuperar Produtos. Erro: {ex.Message}");
+        }
     }
 
     [HttpPost]
-    public string Post()
+    public async Task<IActionResult> Post(RemedioDto model)
     {
-        return "Exemplo de Post";
+        try
+        {
+            var remedio = await this.farmaService.AddRemedios(model);
+            if (remedio == null) return NoContent();
+
+            return Ok(remedio);
+        }
+        catch (Exception ex)
+        {            
+            return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                $"Erro ao tentar adicionar Produtos. Erro: {ex.Message}");
+        }
     }
 
     [HttpPut("{id}")]
-    public string Put(int id)
+    public async Task<IActionResult> Put(int id, RemedioDto model)
     {
-        return $"Exemplo de Put com id = {id}";
+        try
+        {
+            var remedio = await this.farmaService.UpdateRemedio(id, model);
+            if (remedio == null) return NoContent();
+
+            return Ok(remedio);
+            
+        }
+        catch (Exception ex)
+        {            
+            return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                $"Erro ao tentar atualizar Produtos. Erro: {ex.Message}");
+        }
     }
 
     [HttpDelete("{id}")]
-    public string Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        return $"Exemplo de Delete com id = {id}";
+        try
+        {
+            var remedio = await this.farmaService.GetRemedioByIdAsync(id);
+            if(remedio == null) return NoContent();
+
+            return await this.farmaService.DeleteRemedio(id) 
+                ? Ok(new { message = "Deletado!" })
+                :throw new Exception("Ocorreu um problema não específico ao tentar deletar Produto.");
+        }
+        catch (Exception ex)
+        {            
+            return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                $"Erro ao tentar deletar Produto. Erro: {ex.Message}");
+        }
+    }    
     }
-}
 }

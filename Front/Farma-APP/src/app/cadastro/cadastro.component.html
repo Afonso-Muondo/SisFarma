@@ -1,0 +1,77 @@
+<div class="cadastro">
+  <table class="conteudo">
+    <td class="remedio">
+      <app-titulo [titulo]="'Cadastro'" [iconsClass]="'fa fa-list'"></app-titulo>
+    </td>
+    <td class="button">
+      <a href="home"><button class="home btn btn-primary mr-2" style="background-color:#360be1">
+        <i class="fa fa-home"></i>
+        Home
+      </button></a>
+      <a href="produtos">
+        <button class="cad btn btn-warning" style="color: white">
+          <i class="fa fa-basket-shopping"></i>
+          Produtos
+        </button>
+      </a>
+    </td>
+  </table>
+  <hr>
+
+  <form [formGroup]="form">
+    <div class="p-3">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Nome do Produto</label>
+          <input type="text" class="form-control" [ngClass]="{'is-invalid': f.nome.errors && f.nome.touched}" formControlName="nome" placeholder="Dipirona">
+          <div *ngIf="f.nome.errors?.required" class="invalid-feedback">
+            Nome do Produto é obrigatório.
+          </div>
+          <div *ngIf="f.nome.errors?.minlength" class="invalid-feedback">
+            Nome deve ter no mínimo 4 caracteres.
+          </div>
+          <div *ngIf="f.nome.errors?.maxlength" class="invalid-feedback">
+            Nome deve ter no máximo 150 caracteres.
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Volume</label>
+          <input type="text" [ngClass]="{'is-invalid': f.volume.errors && f.volume.touched}" class="form-control" formControlName="volume" placeholder="10g">
+          <div *ngIf="f.volume.errors?.required" class="invalid-feedback">
+            Volume é obrigatório.
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Preço</label>
+          <input type="text" [ngClass]="{'is-invalid': f.preco.errors && f.preco.touched}" class="form-control" formControlName="preco" placeholder="R$ 0,00" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+          <div *ngIf="f.nome.errors?.required" class="invalid-feedback">
+            Preço é obrigatório.
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Quantidade em Estoque</label>
+          <input type="number" [ngClass]="{'is-invalid': f.qtdEstoque.errors && f.qtdEstoque.touched}" class="form-control" formControlName="qtdEstoque" placeholder="000">
+          <div *ngIf="f.preco.errors?.required" class="invalid-feedback">
+            Quantidade em estoque é obrigatória.
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <a href="produtos">
+            <button class="cancel btn btn-outline-primary" (click)="resetForm()" routerLink="/cadastro">
+              <i class="fa-solid fa-xmark"></i>
+              Cancelar
+            </button>
+          </a>
+          <a href="home">
+            <button class="save btn btn-success" (click)="salvarProduto()">
+              <!-- [disabled]="!form.valid" (click)="salvarRemedio()"> -->
+              <i class="fa-solid fa-check"></i>
+              Salvar
+            </button></a>
+          </div>
+      </div>
+      </div>
+    </form>
+
+    <app-table></app-table>
+

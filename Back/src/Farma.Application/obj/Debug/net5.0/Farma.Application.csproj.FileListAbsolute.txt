@@ -1,0 +1,17 @@
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Application.deps.json
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Application.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\ref\Farma.Application.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Application.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.csproj.AssemblyReference.cache
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.AssemblyInfoInputs.cache
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.AssemblyInfo.cs
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.csproj.CoreCompileInputs.cache
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\ref\Farma.Application.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Domain.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Infra.dll
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Domain.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.Application\bin\Debug\net5.0\Farma.Infra.pdb
+C:\afonso\projects\SisFarma\back\src\Farma.Application\obj\Debug\net5.0\Farma.Application.csproj.CopyComplete

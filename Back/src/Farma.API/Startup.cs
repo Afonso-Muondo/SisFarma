@@ -1,18 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Farma.API.Data;
+using Farma.Application;
+using Farma.Application.Contratos;
+using Farma.Infra;
+using Farma.Infra.Contextos;
+using Farma.Infra.Contratos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
+using System;
 
 namespace Farma.API
 {
@@ -28,10 +27,17 @@ namespace Farma.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext> (
+            services.AddDbContext<FarmaContext> (
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
             services.AddControllers();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped<IFarmaService, FarmaService>();
+            services.AddScoped<IGeralInfra, GeralInfra>();
+            services.AddScoped<IFarmaInfra, FarmaInfra>();
+
             services.AddCors();
             services.AddSwaggerGen(c =>
             {

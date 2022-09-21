@@ -1,0 +1,58 @@
+.form-control {
+  width: 400px;
+  padding-right: 20px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.place {
+  margin-right: 10px;
+  background-color: #fff;
+  padding-left: 15px;
+  border-radius: 5px;
+  color: rgb(115, 115, 118);
+  border: 1px solid rgb(200, 198, 198);
+}
+
+.conteudo {
+  display: table;
+  width: 100%;
+}
+
+.button {
+  float: right;
+  outline: unset;
+  box-shadow: none;
+}
+
+.limp:hover {
+  background: #360be1;
+  outline: unset;
+  box-shadow: none;
+}
+
+.cad {
+  background-color: orangered;
+}
+
+tr:nth-child(even) {
+  background: #e8e9f7;
+}
+
+.search-btn {
+  color: #e8e9f7;
+}
+
+thead {
+  background-color: #150553;
+}
+
+.table {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+
+
