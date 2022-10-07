@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -23,6 +26,8 @@ import { RemedioService } from './services/remedio.service';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TableComponent } from './shared/table/table.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
+
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -54,7 +59,8 @@ import { TituloComponent } from './shared/titulo/titulo.component';
     progressBar: true
     })
   ],
-  providers: [RemedioService],
+  providers: [RemedioService,
+    { provide: LOCALE_ID, useValue: 'pt' },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

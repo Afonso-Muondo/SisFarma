@@ -16,8 +16,8 @@
       <!-- <td>{{remedio.image}}</td> -->
       <td>{{remedio.nome}}</td>
       <td>{{remedio.volume}}</td>
-      <td>R$ {{remedio.preco}}</td>
-      <td>{{remedio.qtdEstoque}}</td>
+      <td>{{remedio.preco | currency: 'BRL' }}</td>
+      <td>{{remedio.qtdEstoque | number: '2.0' }}</td>
       <td>
         <button type="button" class="btn btn-primary mr-2" (click)="detalheRemedio(remedio.id)">
           <i class="fa fa-edit"></i>
